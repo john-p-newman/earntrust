@@ -1,0 +1,326 @@
+/*
+Theme Name: Ajusta
+Theme URI: http://jlweb-design.com/
+Author: Cesar Pineda
+Author URI: http://jlweb-design.com/
+Description: Multifunctional WordPress Theme
+Version: 1.0
+*/
+
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label,  egend,table, caption, tbody, tfoot, thead, tr, th, td {border: 0; font-family: inherit; font-size: 100%; font-style: inherit; font-weight: inherit; margin: 0; outline: 0; padding: 0; vertical-align: baseline;}
+html {font-size: 62.5%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust:     100%;}
+*, *:before, *:after {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+article, aside, details, figcaption, figure, footer, header, main, nav, section {display: block;}
+ol, ul {list-style: none;}
+table {border-collapse: separate; border-spacing: 0;}
+caption, th, td {font-weight: normal; text-align: left;}
+blockquote:before, blockquote:after, q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+a:focus {outline: thin dotted;}
+a:hover, a:active {outline: 0;}
+a img {border: 0;}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+body, button, input, select, textarea {color: #404040; color: hsl(0, 0% 25%); font-family: 'Lato', sans-serif; font-size: 16px; font-size: 1.6rem; line-height: 1.4;}
+.masthead {padding: 3em 0 2em; margin: 0 auto; color: hsl(0, 0%, 100%); background: hsl(0, 0%, 15%);}
+.wrapper {max-width: 1000px; padding: 0 2em; margin: 3em auto;}
+h1, h2, h3, h4, h5, h6 {clear: right; font-weight: 900; font-family: 'PT Serif', serif; color: #000; color: hsl(0, 0%, 0%);}
+h1 {font-size: 4rem;}
+h2 {font-size: 3.5rem; margin-top: 6rem;}
+h3 {font-size: 2.5rem; padding-bottom: .4rem; margin-top: 4rem; margin-bottom: -.4rem; border-bottom: #E4E4E4 1px solid;}
+h4 {font-size: 1.8rem; margin-top: 2.4rem; margin-bottom: 1.2rem;}
+p {margin-bottom: 1.5em;}
+b, strong {font-weight: bold;}
+dfn, cite, em, i {font-style: italic;}
+blockquote {margin: 0 1.5em;}
+address {margin: 0 0 1.5em;}
+pre {background: #eee; font-family: "Courier 10 Pitch", Courier, monospace; font-size: 15px; font-size: 1.5rem; line-height: 1.6; margin-bottom: 1.6em; max-width: 100%; overflow: auto; padding: 1.6em;}
+code, kbd, tt, var {font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; font-size: 15px; font-size: 1.5rem;}
+abbr, acronym {border-bottom: 1px dotted #666; cursor: help;}
+mark, ins {background: #fff9c0; text-decoration: none;}
+sup, sub {font-size: 75%; height: 0; line-height: 0; position: relative; vertical-align: baseline;}
+sup {bottom: 1ex;}
+sub {top: .5ex; margin-top: 1em; font-weight: lighter; font-size: 2.5rem;}
+small {font-size: 75%;}
+big {font-size: 125%;}
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+hr {background-color: #ccc; border: 0; height: 1px; margin-bottom: 1.5em;}
+ul, ol {margin: 0 0 1.5em 3em;}
+ul {list-style: disc;}
+ol {list-style: decimal;}
+li > ul, li > ol {margin-bottom: 0; margin-left: 1.5em;}
+dt {font-weight: bold;}
+dd {margin: 0 1.5em 1.5em;}
+img {height: auto; /* Make sure images are scaled correctly. */	max-width: 100%; /* Adhere to container width. */}
+figure {margin: 0;}
+table {margin: 0 0 1.5em; width: 100%;}
+th {font-weight: bold;}
+ul.gallery {list-style: none;}
+/*- CSS3 -*/
+.feat_box:hover, #brandsCarousel img:hover, #site-branding img {width-webkit-transition: all 200ms ease-in-out; -moz-transition: all 200ms ease-in-out; -ms-transition: all 200ms ease-in-out; -o-transition: all 200ms ease-in-out; transition: all 200ms ease-in-out;}
+.feat_box:hover, #brandsCarousel img:hover {-moz-transform: scale(1.1); -webkit-transform: scale(1.1); -o-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);}
+@-webkit-keyframes left {from {margin-left: -100px;} to {margin-left: 0px;}}
+@keyframes left {from {margin-left: -100px;} to {margin-left: 0px;}} 
+@-webkit-keyframes left2 {from {margin-left: -130px;} to {margin-left: 0px;}}
+@keyframes left2 {from {margin-left: -130px;} to {margin-left: 0px;}}
+@-webkit-keyframes right {from {margin-right: -100px;} to {margin-left: 0px;}}
+@keyframes right {from {margin-right: -100px;} to {margin-left: 0px;}}
+
+/*--------------------------------------------------------------
+4.0 Forms
+--------------------------------------------------------------*/
+button, input, select, textarea {font-size: 100%; margin: 0; vertical-align: baseline;}
+button, input[type="button"], input[type="reset"], input[type="submit"] {border: 1px solid; border-color: #ccc #ccc #bbb; border-radius: 3px; background: #e6e6e6; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05); color: rgba(0, 0, 0, .8); cursor: pointer; -webkit-appearance: button; font-size: 12px; font-size: 1.2rem; line-height: 1; padding: .6em 1em .4em; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);}
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {border-color: #ccc #bbb #aaa; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);}
+button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {border-color: #aaa #bbb #bbb; box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);}
+input[type="checkbox"], input[type="radio"] {padding: 0;}
+input[type="search"] {-webkit-appearance: textfield; box-sizing: content-box;}
+input[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea {color: #666; border: 1px solid #ccc; border-radius: 3px;}
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus {color: #111;}
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"] {padding: 3px;}
+textarea {width: 100%; overflow: auto; padding-left: 3px; vertical-align: top;}
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+.scroll-to-fixed-fixed {background: url('img/white95.png') repeat;}
+.scroll-to-fixed-fixed #navigation {height: auto; min-height: auto; line-height: 50px;}
+.scroll-to-fixed-fixed #site-branding {height: auto; min-height: auto; line-height: 50px;}
+.scroll-to-fixed-fixed img {height: 50px;}
+
+#head .scroll-to-fixed-fixed {height: auto; min-height: auto; line-height: 40px;}
+#head .branding_full {width: 100%; height: auto; min-height: auto; margin: 0; line-height: normal; text-align: center;}
+#head .branding_full img {margin: 15px 0;}
+#head .navi_full {width: 100%; height: auto; margin-bottom: 10px; padding: 2px 0; border-top: 1px #f6f6f6 solid; border-bottom: 1px #f6f6f6 solid;}
+#head .navi_full #navigation {border-top: 2px #f6f6f6 solid; border-bottom: 2px #f6f6f6 solid;}
+#head .navi_full #navigation ul.navi {margin: 0 auto; display: table; float: none;}
+/* If Logo Full */
+#site-branding {height: 80px; min-height: 80px; margin: 0; line-height: 80px; overflow: hidden;}
+#site-branding a {-webkit-animation: left 2s; animation: left 2s;}
+#site-branding .site-name {margin: 0; line-height: 80px; text-transform: uppercase; font-size: 2.5rem;}
+#navigationRes, .collapseNav {display: none;}
+#navigation ul.navi {margin: 0; display: table; float: right;}
+#site-navigation {z-index: 9999;}
+#navigation {width: 100%; height: 80px; min-height: 80px; line-height: 80px; display: table;}
+#navigation ul li {-webkit-animation: left2 2s; animation: left2 2s;}
+#navigation li:hover {background-color: #f6f6f6;}
+#navigation .current_page_item a {color: #000000;}
+#navigation ul {margin: 0; padding: 0; list-style: none; float: left;}
+#navigation ul li {padding: 0 20px; position: relative; display: block; float: left; text-align: center; font-size: 1.7rem;}
+#navigation ul li a {display: block; text-decoration: none; font-weight: bold;}
+#navigation li ul {position: absolute; left: 0; display: none; z-index: 999;}
+#navigation ul li ul li {width: 200px; min-width: 200px; text-align: left; font-size: 1.5rem;}
+/* lists nested under hovered list items */
+#navigation li:hover ul { margin-left: -1px; left: 1px; display: block;}
+#navigation ul li ul li {/*change dropdown items */ width: 100%; height: 50px; min-height: 50px; line-height: 50px; font-weight: normal; background: #E4E4E4;}
+@media only screen and ( max-width: 40em ) /* 640 */ {
+#site-branding {margin-top: 40px;}
+#site-navigation {width: 100%; position: absolute; top: 0; right: 0;}
+#navigation {display: none;}
+#navigationRes {display: block;}
+#navigationRes a.btn {display: block;}
+#navigationRes ul {margin: 0; list-style: none;}
+#navigationRes ul.navi {-webkit-border-radius: 4px 4px 4px 4px; border-radius: 4px 4px 4px 4px; overflow: hidden;}
+#navigationRes ul li a, #navigationRes ul li ul li a {padding: 5px 0 5px 10px; display: block;}
+#navigationRes ul li a {background: #E8E8E8;}
+#navigationRes ul li ul li a {padding-left: 20px; background: #eeeeee;}
+#navigationRes ul li ul li a::before {content: "↪ ";} 
+}
+
+
+/*--------------------------------------------------------------
+5.1 Links
+--------------------------------------------------------------*/
+a:hover, a:focus {text-decoration: underline;}
+
+
+/*--------------------------------------------------------------
+6.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {display: inline; float: left; margin-right: 1.5em;}
+.alignright {display: inline; float: right; margin-left: 1.5em;}
+.aligncenter {clear: both; display: block; margin: 0 auto 10px auto;}
+
+
+/*--------------------------------------------------------------
+7.0 Clearings
+--------------------------------------------------------------*/
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {content: ""; display: table;}
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after {clear: both;}
+
+
+/*--------------------------------------------------------------
+8.0 Widgets
+--------------------------------------------------------------*/
+#sidebar, .schema {margin-top: 15px;}
+#sidebar ul {margin: 0 0 0 15px;}
+.textwidget, .schema {padding: 10px; background: #f9f9f9;}
+.schema {position: relative;}
+.specialtxt {margin-top: 5px; color: #ffffff;}
+.specialtxt h2 {margin: 0; padding: 10px 0; font-size: 1.4em;}
+.textwidget {margin: 0 0 10px;}
+.schema .wht {padding: 5px; border-bottom: #eeeeee 1px solid; text-align: center;}
+.pays {width: 100%; display: table;}
+.pays span {width: 40px; height: 25px; margin: 5px 3px 0 3px; display: block; float: left; background-image: url('img/payment_options.png');}
+.pays .mc {background-position: 0 -100px;}
+.pays .visa {background-position: 0 -75px;}
+.pays .disc {background-position: 0 -125px;}
+.pays .amex {background-position: 0 -150px;}
+.pays .ppal {background-position: 0 -50px;}
+.pays .cash {background-position: 0 0;}
+.pays .check {background-position: 0 -25px;}
+.widget-title, .schema h3 {margin-top: 0; line-height: 0.8;} 
+.widget-title {margin-bottom: 0; padding: 10px; background: #EEEEEE;}
+/* Make sure select elements fit in widgets */
+.widget select {max-width: 100%;}
+/* Search widget */
+.widget_search .search-submit {display: none;}
+#sidewrap_hbot {padding-top: 30px; padding-bottom: 30px; background: url('img/white95.png') repeat;}
+#sidewrap_hbot #sidebar {margin: 0;}
+#sidewrap_hbot .textwidget {background: none; padding: 0;}
+#sidewrap_hbot h3 {margin: 0; padding: 0 0 10px 0; border: none;}
+/* Coupon Section */
+#printdiv {margin-top: 10px; max-width: 380px; overflow: hidden; background: #E0E0E0;}
+#printdiv .print_inner {width: 90%; margin: 20px auto; padding: 10px 5px; border: #000000 4px dashed; text-align: center; color: #222222; display: table;}
+.pop-up {margin-top: 5px;}
+#ytvid {width: 100%; margin: 10px auto; padding: 20px 0; text-align: center; color: #ffffff; display: table;}
+
+
+/*--------------------------------------------------------------
+9.0 Content
+--------------------------------------------------------------*/
+/* Header */
+#splash {width: 100%; height: 100%; min-height: 1200px; text-align: center; background: url('img/black95.png') repeat; position: fixed; top: 0; z-index: 9999999;}
+#splash img {max-width: 100%; margin-bottom: 10px;}
+#splash h2 {color: #222222;}
+#splash .stext {width: 640px; margin: 10% auto 0 auto; padding: 10px; border: 5px #ffffff solid; font-weight: bold; font-size: 20px; line-height: 30px; background: #dddddd; color: #444444;}
+#splash a {color: #1873AF;}
+#head {background: #ffffff;}
+#head .top_social {margin-left: 15px;}
+#site-top-contact, #site-top-social {height: 40px; min-height: 40px; line-height: 40px; background: #eeeeee;}
+#site-top-contact {font-size: 1.6rem;}
+#site-top-social {text-align: right;}
+#site-top-social .fa-lg {line-height: inherit; font-size: 2.2rem; vertical-align: middle;}
+.fa-facebook, .fa-twitter, .fa-youtube, .fa-google-plus, .fa-linkedin, .fa-pinterest, .fa-instagram, .fa-yelp {color: #666666;}
+.fa-facebook:hover {color: #3B5998;}
+.fa-twitter:hover {color: #5EA9DD}
+.fa-youtube:hover {color: #E22C28;}
+.fa-google-plus:hover {color: #D11818;}
+.fa-linkedin:hover {color: #007BB6;}
+.fa-pinterest:hover {color: #CC2127;}
+.fa-instagram:hover {color: #B4872C;}
+.fa-yelp:hover {color: #CE2200;}
+
+/* Carousel */
+#main_slider {background: #ffffff;}
+.carousel-inner .item {position: relative; overflow: hidden;}
+.carousel-inner .item img {width: 100%;}
+.carousel-caption {padding: 0 10px; background: url('img/black60.png') repeat; -webkit-transition: all 600ms ease-in-out; -moz-transition: all 600ms ease-in-out; -ms-transition: all 600ms ease-in-out; -o-transition: all 600ms ease-in-out; transition: all 600ms ease-in-out;}
+.carousel-caption h1, .carousel-caption h2, .carousel-caption h3, .carousel-caption h4 {margin-top: 0;}
+.carousel-fade .carousel-inner .item {opacity: 0; -webkit-transition-property: opacity; -moz-transition-property: opacity; -o-transition-property: opacity; transition-property: opacity;}
+.carousel-fade .carousel-inner .active {opacity: 1;}
+.carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right {left: 0; opacity: 0; z-index: 1;}
+.carousel-fade .carousel-inner .next.left,.carousel-fade .carousel-inner .prev.right {opacity: 1;}
+.carousel-fade .carousel-control {z-index: 2;}
+
+/* Call To Action */
+#cta_container {padding-top: 40px; padding-bottom: 40px; background: #eeeeee; overflow: hidden;}
+#cta_txt h2 {margin: 0; line-height: 32px; -webkit-animation: left 2s; animation: left 2s;}
+#cta_txt p {margin: 0; font-size: 1.8rem; line-height: 20px; -webkit-animation: left2 2s; animation: left2 2s;}
+#cta_btn {line-height: 52px; text-align: right;}
+#cta_btn a {-webkit-animation: right 2s; animation: right 2s;}
+#sidewrap_cta #sidebar {margin: 0;}
+#sidewrap_cta .textwidget {background: none; padding: 0;}
+#sidewrap_cta h3 {margin: 0; border: none;}
+
+/* Featured Section */
+#feat_sec {padding: 60px 0; background: url('img/black80.png') repeat;}
+#feat_sec .col-md-3, #feat_sec .col-md-4 {color: #ffffff; text-align: center;}
+.feat_box {padding: 0 10px;}
+.feat_box i {margin-bottom: 10px; padding: 25px; font-size: 4.8rem; border-radius: 50%; -webkit-border-radius: 50%;}
+.col-md-3 h3, .col-md-4 h3 {margin: 0 0 2px 0; border: none;}
+
+/* Body */
+#home {}
+#main {background: #ffffff;}
+#primary {}
+#page_image {min-height: 60px; background: #eeeeee; position: relative;}
+#page_image .no_feat {width: 100%; text-align: center; line-height: 50px; color: #999999;}
+#page_image .entry-title {margin: 0; padding: 10px 20px; background: url('img/black70.png') repeat; color: #ffffff; position: absolute; bottom: 0; left: 0;}
+
+/* Customer Reviews */
+#wpcr_hcard_s {display: none;}
+.hreview {padding: 10px; background: #f6f6f6;}
+h2.summary  {margin: 0; padding-top: 0;}
+
+/* Footer */
+#colophon {padding-top: 30px; padding-bottom: 30px; background: url('img/black80.png') repeat; color: #ffffff;}
+
+/* Contact Form */
+#contact-form input, #contact-form select, #contact-form textarea, #contact-form label {font-size:15px; margin-bottom:2px;}
+#contact-form input, #contact-form select, #contact-form textarea {width: 100%; border: 1px solid #CEE1E8; margin-bottom:20px; padding:4px;}
+#contact-form .c_name input, #contact-form .c_email input, #contact-form .c_phone input {width: 100%;}
+#contact-form input:focus, #contact-form select:focus, #contact-form textarea:focus {border: 1px solid #AFCDD8; background-color: #EBF2F4;}
+#contact-form textarea {height:150px; resize: none;}
+#contact-form label {display:block;}
+#contact-form .required {font-weight:bold; color:#F00;}
+#contact-form .fa {font-size: 1rem; color: #EDC7C7;}
+#contact-form .thanks, #contact-form .error {margin-bottom: 5px; text-align: center; color: #ffffff;}
+#contact-form .thanks {padding: 5px 0; background: #40BC07;}
+#contact-form .error {padding: 5px; background: #BA0707;}
+/* Remove box shadow firefox, chrome and opera put around required fields. It looks rubbish. */
+input:required, textarea:required {-moz-box-shadow:none; -webkit-box-shadow:none; -o-box-shadow:none; box-shadow:none;}
+/* chrome, safari */
+::-webkit-input-placeholder {color:#CCC; font-style:italic;}
+/* mozilla */
+input:-moz-placeholder, textarea:-moz-placeholder {color:#CCC; font-style:italic;}
+/* ie (faux placeholder) */
+input.placeholder-text, textarea.placeholder-text  {color:#CCC; font-style:italic;}
+#contact-form .c_submit {display: table; clear: both;}
+#gmap {padding: 15px; background: #ffffff;}
+
+
+/*--------------------------------------------------------------
+9.1 Posts and pages
+--------------------------------------------------------------*/
+.sticky {display: block;}
+.hentry {margin: 1em 0;}
+.byline, .updated:not(.published) {display: none;}
+.single .byline, .group-blog .byline {display: inline;}
+.page-content, .entry-summary {margin: 1.5em 0 0;}
+.page-links {clear: both; margin: 0 0 1.5em;}
+.entry-header .entry-title {margin-top: 0; text-indent: 5px; line-height: normal; background: #F9F9F9;}
+.entry-title {margin-top: 0; line-height: .8;}
+.entry-meta {margin-bottom: 10px; text-transform: uppercase; font-size: 1.2rem; border-bottom: 1px solid #E4E4E4;}
+.entry-content {padding: 15px; background: #f6f6f6; display: block;}
+.entry-footer {padding: 10px 15px; background: #eeeeee; color: #333333; line-height: 2.42857; overflow: hidden;}
+.entry-footer a {color: #000000; font-weight: bold;}
+.entry-footer a:hover {color: #000000;}
+.paging-navigation ul {margin: 0;}
+.paging-navigation li { display: inline; }
+a.page-numbers, span.page-numbers {padding: .3em .7em; color: #333; color: hsl(0, 0%, 20%);}
+a:hover.page-numbers {color: #000; color: hsl(0, 0%, 0%);}
+.paging-navigation .current {font-weight: bold; color: #000; color: hsl(0, 0%, 0%);}
+.paging-navigation {padding-top: 1em; padding-bottom: 1em; margin-bottom: 2em; list-style-type: none; background: #fff;}           
+
+
+/*--------------------------------------------------------------
+9.2 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title, .archive .format-aside .entry-title {display: none;}
+
+
+/*--------------------------------------------------------------
+9.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {word-wrap: break-word;}
+.bypostauthor {display: block;}

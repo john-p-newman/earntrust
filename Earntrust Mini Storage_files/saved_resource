@@ -1,0 +1,11 @@
+
+a, #navigation ul li a {color: #115FB2;}
+a:hover, #navigation ul li a:hover {color: #868688;}
+.specialtxt {background: #868688;}
+
+
+body {background: url('../wp-content/uploads/2015/02/bg.jpg') -25px -50px fixed no-repeat;;}
+.mmove1 {background-size: calc(100% + 50px);}
+#ytvid, .feat_box i {background: #115FB2;}
+
+#main_slider .carousel-caption {padding-bottom: 10px;}
