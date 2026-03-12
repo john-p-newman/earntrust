@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Earntrust Mini Storage | Andalusia, AL</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0f1e3d;
+      --navy2:  #1a2f5a;
+      --amber:  #f59e0b;
+      --amber2: #d97706;
+      --light:  #f8fafc;
+      --white:  #ffffff;
+      --text:   #1e293b;
+      --muted:  #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(15,30,61,.10);
+      --transition: .22s ease;
+      --max-w: 1160px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── TOPBAR ─────────────────────────────── */
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      padding: 8px 24px;
+    }
+    .topbar-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .topbar a { color: rgba(255,255,255,.75); transition: color var(--transition); }
+    .topbar a:hover { color: var(--amber); }
+    .topbar-contact { display: flex; gap: 20px; flex-wrap: wrap; }
+    .topbar-contact span { display: flex; align-items: center; gap: 6px; }
+
+    /* ─── HEADER / NAV ───────────────────────── */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo img { height: 44px; width: auto; }
+    .logo-text { line-height: 1.2; }
+    .logo-text small { display: block; font-weight: 500; font-size: 11px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      transition: background var(--transition), color var(--transition);
+    }
+    nav a:hover, nav a.active { background: var(--light); color: var(--navy); }
+    nav a.nav-cta {
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 700;
+      margin-left: 8px;
+    }
+    nav a.nav-cta:hover { background: var(--amber2); }
+
+    /* Mobile hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      border: none;
+      background: none;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ─── HERO ───────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1e3a6e 100%);
+      color: var(--white);
+      padding: 100px 24px 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 80% 50%, rgba(245,158,11,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 400px at 10% 80%, rgba(245,158,11,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Decorative grid pattern */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,158,11,.18);
+      border: 1px solid rgba(245,158,11,.35);
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,.75);
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .btn-primary {
+      background: var(--amber);
+      color: var(--navy);
+    }
+    .btn-primary:hover { background: var(--amber2); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(245,158,11,.35); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,.35);
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+    /* Hero stat card */
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .stat-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      text-align: center;
+      min-width: 160px;
+    }
+    .stat-card .num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-card .lbl {
+      font-size: 12px;
+      color: rgba(255,255,255,.65);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* ─── CTA STRIP ──────────────────────────── */
+    .cta-strip {
+      background: var(--amber);
+      padding: 24px;
+    }
+    .cta-strip-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-strip h2 { font-size: 20px; font-weight: 800; color: var(--navy); }
+    .cta-strip p { color: var(--navy2); font-size: 15px; margin-top: 2px; }
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-dark:hover { background: var(--navy2); transform: translateY(-1px); }
+
+    /* ─── FEATURES ───────────────────────────── */
+    .features {
+      padding: 80px 24px;
+      background: var(--white);
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--amber2);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -.02em;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 500px;
+      margin-bottom: 52px;
+    }
+    .features-inner { max-width: var(--max-w); margin: 0 auto; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .feature-card:hover {
+      border-color: var(--amber);
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-icon svg { width: 26px; height: 26px; color: var(--amber); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); }
+    .feature-card p { color: var(--muted); font-size: 15px; flex: 1; }
+    .feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--amber2);
+      transition: gap var(--transition);
+    }
+    .feature-link:hover { gap: 10px; }
+
+    /* ─── MAIN CONTENT ───────────────────────── */
+    .content-section {
+      padding: 80px 24px;
+      background: var(--light);
+    }
+    .content-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Article */
+    .article-body { font-size: 16px; color: var(--text); }
+    .article-body p { margin-bottom: 18px; }
+    .article-body blockquote {
+      border-left: 4px solid var(--amber);
+      padding: 16px 24px;
+      background: var(--white);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 28px 0;
+      font-size: 16px;
+      color: var(--navy2);
+      font-style: italic;
+    }
+    .article-body h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 24px;
+    }
+    .article-cta {
+      margin-top: 32px;
+      padding: 28px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      color: var(--white);
+    }
+    .article-cta p { color: rgba(255,255,255,.8); margin-bottom: 16px; font-size: 15px; }
+    .article-cta .btn-primary { align-self: flex-start; }
+
+    /* Sidebar */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .sidebar-card h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sidebar-card h4 svg { width: 18px; height: 18px; color: var(--amber2); flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .info-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-row strong { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .info-row a { color: var(--navy); font-weight: 600; }
+    .info-row a:hover { color: var(--amber2); }
+
+    /* Hours badge */
+    .hours-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .hours-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #16a34a; display: block; }
+
+    /* Payment options */
+    .payment-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .chip {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .pay-now-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all var(--transition);
+      margin-top: 16px;
+    }
+    .pay-now-btn:hover { background: var(--navy2); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(15,30,61,.2); }
+    .pay-now-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .map-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--amber2);
+    }
+    .map-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .map-link:hover { color: var(--amber); }
+
+    /* ─── FOOTER ─────────────────────────────── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.6);
+      padding: 40px 24px;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-brand small { display: block; font-size: 13px; font-weight: 400; color: rgba(255,255,255,.5); margin-top: 2px; }
+    footer a { color: rgba(255,255,255,.6); transition: color var(--transition); }
+    footer a:hover { color: var(--amber); }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: row; }
+      .stat-card { min-width: 0; flex: 1; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .content-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      nav { display: none; }
+      nav.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+      nav.open a { padding: 12px 16px; }
+      .nav-toggle { display: flex; }
+      .site-header { position: relative; }
+      .hero-stats { display: none; }
+      .cta-strip-inner { flex-direction: column; text-align: center; }
+      .header-inner { position: relative; }
+    }
+    @media (max-width: 500px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .hero { padding: 60px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-contact">
+        <span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:creedola@yahoo.com">creedola@yahoo.com</a>
+        </span>
+        <span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.21 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:13344271006">(334) 427-1006</a>
+        </span>
+      </div>
+      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);">Serving Covington County, AL</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="./Earntrust Mini Storage_files/earntrust-logo.png" alt="Earntrust Mini Storage" onerror="this.style.display='none'">
+        <div class="logo-text">
+          Earntrust Mini Storage
+          <small>Andalusia, Alabama</small>
+        </div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="#" class="active">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Us</a>
+        <a href="tel:13344271006" class="nav-cta">Call Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Trusted Storage in Covington County
+        </div>
+        <h1>Secure Storage<br>You Can <em>Rely On</em></h1>
+        <p>Earntrust Mini Storage has served Andalusia and Covington County for years with safe, affordable, and accessible storage solutions — open 24 hours.</p>
+        <div class="hero-actions">
+          <a href="tel:13344271006" class="btn btn-primary">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.21 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (334) 427-1006
+          </a>
+          <a href="#contact" class="btn btn-outline">Get Directions</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="num">24/7</div>
+          <div class="lbl">Always Open</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">100%</div>
+          <div class="lbl">Licensed</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">AL</div>
+          <div class="lbl">Andalusia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Satisfaction Guaranteed!</h2>
+        <p>Call us today to find out how we can solve your storage needs.</p>
+      </div>
+      <a href="tel:13344271006" class="btn btn-dark">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.21 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Contact Us Today
+      </a>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features" id="services">
+    <div class="features-inner">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Storage Made Simple</h2>
+      <p class="section-sub">From small residential units to larger commercial spaces, we have the solution for you.</p>
+      <div class="feature-grid">
+        <div class="feature-card" id="about">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>About Us</h3>
+          <p>At Earntrust Mini Storage we want you to know that we are the company for you when it comes to storage services. Years of experience and a commitment to honesty set us apart.</p>
+          <span class="feature-link">
+            Learn more
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Our Services</h3>
+          <p>From close-fitting residential spaces to open commercial areas, Earntrust Mini Storage is skilled and equipped to handle all your storage needs efficiently.</p>
+          <span class="feature-link">
+            View services
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+        <div class="feature-card" id="contact">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3>Contact Us</h3>
+          <p>Get in touch with Earntrust Mini Storage today! Our trained and attentive team will be glad to answer your questions and help find the right storage solution.</p>
+          <a href="tel:13344271006" class="feature-link">
+            Call now
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT + SIDEBAR -->
+  <section class="content-section">
+    <div class="content-inner">
+      <!-- Article -->
+      <div class="article-body">
+        <div class="section-label">Serving Covington County</div>
+        <h2 class="section-title">Your Local Storage Experts</h2>
+        <p>If you are a resident of Covington County and are in need of storage services, look no further! Earntrust Mini Storage has been in the storage business for many years. We are here to be the company for you when you need storage services — your search for a professional ends with Earntrust Mini Storage!</p>
+        <blockquote>
+          Earntrust Mini Storage has been serving Covington County cities like Andalusia with quality storage services for many years and is fully licensed for your protection.
+        </blockquote>
+        <p>High safety standards have always been a part of Earntrust Mini Storage. They allow us to make sure that both our work crews and customers are safe and protected from unexpected incidents. Timeliness, honesty, integrity, and attention to detail in all storage services we provide ensure that you — our customer — are always pleased with the outcome and aware of each step in the process.</p>
+        <div class="article-cta">
+          <h4 style="font-size:17px;font-weight:800;margin-bottom:8px;">Ready to get started?</h4>
+          <p>Call Earntrust Mini Storage at (334) 427-1006 today to find out how we can take care of your storage needs. Put it in our hands — we'll make it stress-free for you!</p>
+          <a href="tel:13344271006" class="btn btn-primary">Call (334) 427-1006</a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Contact info card -->
+        <div class="sidebar-card">
+          <h4>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Earntrust Mini Storage
+          </h4>
+          <div class="info-row">
+            <strong>Address</strong>
+            101 Lark Street<br>Andalusia, AL 36420
+            <a href="https://www.google.com/maps/place/Lark+St,+Andalusia,+AL+36420" target="_blank" class="map-link" style="margin-top:6px;">
+              <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+          </div>
+          <div class="info-row">
+            <strong>Phone</strong>
+            <a href="tel:13344271006">(334) 427-1006</a>
+          </div>
+          <div class="info-row">
+            <strong>Email</strong>
+            <a href="mailto:creedola@yahoo.com">creedola@yahoo.com</a>
+          </div>
+          <div class="info-row">
+            <strong>Hours</strong>
+            <span class="hours-badge">Open 24 Hours</span>
+          </div>
+        </div>
+
+        <!-- Payment card -->
+        <div class="sidebar-card">
+          <h4>
+            <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Payment Options
+          </h4>
+          <div class="payment-chips">
+            <span class="chip">Visa</span>
+            <span class="chip">Mastercard</span>
+            <span class="chip">Amex</span>
+            <span class="chip">Discover</span>
+            <span class="chip">Cash</span>
+            <span class="chip">Check</span>
+          </div>
+          <a href="https://buy.stripe.com/test_14A28kfTAdjA6nUgE0eME00" class="pay-now-btn">
+            <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Pay Now Online
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Earntrust Mini Storage
+        <small>101 Lark Street, Andalusia, AL 36420</small>
+      </div>
+      <div style="font-size:13px;">
+        &copy; 2026 Earntrust Mini Storage &nbsp;|&nbsp;
+        Hosted by <a href="https://bighypemarketing.com/" target="_blank">Big Hype Marketing</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
